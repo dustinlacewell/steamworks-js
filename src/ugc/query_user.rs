@@ -1,8 +1,7 @@
 use napi::bindgen_prelude::*;
 use napi::{Env, Result};
-use std::sync::mpsc;
 use std::sync::Arc;
-use steamworks::{AccountId, AppIDs, AppId, ClientManager, QueryHandle, UGCType, UserList, UserListOrder};
+use steamworks::{AccountId, AppIDs, AppId, QueryHandle, UGCType, UserList, UserListOrder};
 
 use super::query::fetch_details;
 use super::types::*;
@@ -19,7 +18,7 @@ pub struct QueryUserTask {
 }
 
 impl QueryUserTask {
-  fn create_query_handle(&self) -> Result<QueryHandle<ClientManager>> {
+  fn create_query_handle(&self) -> Result<QueryHandle> {
     match self.client.ugc().query_user(
       self.account,
       self.list_type,

@@ -285,7 +285,7 @@ impl FriendsClient {
     }
     
     // Helper function to map Friend to relationship u32
-    fn map_friend_relationship(&self, friend: &Friend<steamworks::ClientManager>) -> u32 {
+    fn map_friend_relationship(&self, friend: &Friend) -> u32 {
         if friend.has_friend(FriendFlags::BLOCKED) {
             return 1; // Blocked
         }
@@ -321,7 +321,7 @@ impl FriendsClient {
     }
     
     // Helper function to determine Friend's relationship enum
-    fn get_friend_relationship_enum(&self, friend: &Friend<steamworks::ClientManager>) -> FriendRelationshipEnum {
+    fn get_friend_relationship_enum(&self, friend: &Friend) -> FriendRelationshipEnum {
         if friend.has_friend(FriendFlags::BLOCKED) {
             return FriendRelationshipEnum::Blocked;
         }

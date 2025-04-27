@@ -5,7 +5,6 @@ extern crate napi_derive;
 
 mod ugc;
 mod friends;
-pub mod callback_util;
 mod errors;
 
 use napi::bindgen_prelude::*;

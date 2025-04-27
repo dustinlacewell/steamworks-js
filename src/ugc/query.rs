@@ -1,12 +1,12 @@
 use napi::Error;
 use napi::Result;
 use std::sync::mpsc;
-use steamworks::{ClientManager, QueryHandle};
+use steamworks::QueryHandle;
 
 use super::types::*;
 
 // /// Async Task for getting workshop item details
-pub fn fetch_details(query_handle: QueryHandle<ClientManager>) -> Result<Vec<WorkshopItemDetails>> {
+pub fn fetch_details(query_handle: QueryHandle) -> Result<Vec<WorkshopItemDetails>> {
   let (tx, rx) = mpsc::channel();
 
   query_handle.fetch(move |result| {

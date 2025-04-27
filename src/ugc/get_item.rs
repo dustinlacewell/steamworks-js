@@ -1,7 +1,7 @@
 use napi::bindgen_prelude::*;
 use napi::{Env, Result};
 use std::sync::Arc;
-use steamworks::{ClientManager, PublishedFileId, QueryHandle};
+use steamworks::{PublishedFileId, QueryHandle};
 
 use super::query::fetch_details;
 use super::types::WorkshopItemDetails;
@@ -13,7 +13,7 @@ pub struct GetWorkshopItemDetailsTask {
 }
 
 impl GetWorkshopItemDetailsTask {
-  fn create_query_handle(&self) -> Result<QueryHandle<ClientManager>> {
+  fn create_query_handle(&self) -> Result<QueryHandle> {
     match self.client.ugc().query_item(PublishedFileId(self.item_id as u64)) {
       Ok(handle) => Ok(handle),
       Err(e) => Err(Error::from_reason(e.to_string())),
