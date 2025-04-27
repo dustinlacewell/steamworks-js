@@ -11,6 +11,10 @@
   "files": [
     "steamworks-ts.win32-x64-msvc.node"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dustinlacewell/steamworks.ts.git"
+  },
   "license": "MIT",
   "engines": {
     "node": ">= 10"

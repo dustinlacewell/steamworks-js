@@ -11,6 +11,12 @@
     "type": "git",
     "url": "https://github.com/dustinlacewell/steamworks.ts.git"
   },
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "package.json"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^2.18.4",
