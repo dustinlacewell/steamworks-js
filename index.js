@@ -33,9 +33,6 @@ if (platform === 'win32') {
   }
 }
 
-// Now load your native module
-const nativeAddon = require('./build/Release/my_native_module.node');
-
 let nativeBinding = null
 let localFileExisted = false
 let loadError = null
