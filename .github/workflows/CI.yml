@@ -192,8 +192,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts
+      - name: Debug: List all artifact files
+        run: |
+          echo "::group::artifacts directory tree"
+          find artifacts/ -type f || true
+          echo "::endgroup::"
       - name: Move artifacts
         run: yarn artifacts
+      - name: Debug: List npm directory after artifacts
+        run: |
+          echo "::group::npm directory tree"
+          find npm/ -type f || true
+          echo "::endgroup::"
       - name: List packages
         run: ls -R ./npm
         shell: bash
