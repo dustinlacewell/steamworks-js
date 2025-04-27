@@ -7,6 +7,10 @@
     "name": "steamworks-ts",
     "triples": {}
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dustinlacewell/steamworks.ts.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^2.18.4",
