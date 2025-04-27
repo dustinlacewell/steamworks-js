@@ -1,0 +1,35 @@
+# CLAUDE.md
+
+1. NO USELESS CONFIRMATORY FEEDBACK
+
+2. NO EXPLAINING TO ME WHAT I JUST EXPLAINED TO YOU
+
+3. DO NOT TELL ME TO BUILD / RUN THE CODE _YOU DO THIS UNTIL YOU ARE DONE_
+
+4. swrs/ IS A SUBMODULE. STOP CHANGING HOW WE USE IT.
+
+5. AFTER YOU MAKE ANY CHANGE BUILD AND RUN THE CODE!!!
+
+steamworks.ts is an attempt to combine steamworks-rs and napi-rs to build a slick, modern, strict, dev friendly typescript library for interacting with steamworks.
+
+steamworks-rs is located as a submodule in swrs/ for reference.
+
+src/ is where our own rust code goes.
+
+run `npm run build` to build the project.
+
+there is a test file in main.ts we can use to test things.
+
+you can use `npx tsx main.ts` to run the test file.
+
+As evidenced by steamworks.ts.win32-x64-msvc.code, we are able to build it.
+
+I can confirm that main.ts also connects to steamworks, and the non-async stuff what we have is working.
+
+Our priorities:
+- 100% UGC feature coverage
+- BASIC user information
+
+Everything we might cover after that is fluff we'll think about later.
+
+YOU MUST ASK ME FOR DOCUMENTATION ON EVERY NAPI-RS RELATED THING YOU DO.
