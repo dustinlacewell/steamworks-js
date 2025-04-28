@@ -101,9 +101,6 @@ jobs:
           name: bindings-${{ matrix.settings.target }}
           path: ${{ env.APP_NAME }}.*.node
           if-no-files-found: error
-      - name: Copy Steam redistributable
-        run: node bin/build.js
-        shell: bash
   test-macOS-windows-binding:
     name: Test bindings on ${{ matrix.settings.target }} - node@${{ matrix.node }}
     needs:
@@ -195,6 +192,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts
+      - name: Copy Steam redistributable
+        run: node bin/build.js
+        shell: bash
       - name: Debug - List all artifact files
         run: |
           echo "::group::artifacts directory tree"
