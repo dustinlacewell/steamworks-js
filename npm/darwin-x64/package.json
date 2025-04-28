@@ -7,14 +7,14 @@
   "cpu": [
     "x64"
   ],
-  "main": "steamworks-ts.darwin-x64.node",
+  "main": "steamworks-js.darwin-x64.node",
   "files": [
     "libsteam_api.dylib",
-    "steamworks-ts.darwin-x64.node"
+    "steamworks-js.darwin-x64.node"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustinlacewell/steamworks-ts.git"
+    "url": "https://github.com/dustinlacewell/steamworks-js.git"
   },
   "license": "MIT",
   "engines": {

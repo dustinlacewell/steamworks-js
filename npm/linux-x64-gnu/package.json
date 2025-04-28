@@ -7,14 +7,14 @@
   "cpu": [
     "x64"
   ],
-  "main": "steamworks-ts.linux-x64-gnu.node",
+  "main": "steamworks-js.linux-x64-gnu.node",
   "files": [
     "libsteam_api.so",
-    "steamworks-ts.linux-x64-gnu.node"
+    "steamworks-js.linux-x64-gnu.node"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustinlacewell/steamworks-ts.git"
+    "url": "https://github.com/dustinlacewell/steamworks-js.git"
   },
   "license": "MIT",
   "engines": {

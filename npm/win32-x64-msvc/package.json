@@ -7,15 +7,15 @@
   "cpu": [
     "x64"
   ],
-  "main": "steamworks-ts.win32-x64-msvc.node",
+  "main": "steamworks-js.win32-x64-msvc.node",
   "files": [
     "steam_api64.dll",
     "steam_api64.lib",
-    "steamworks-ts.win32-x64-msvc.node"
+    "steamworks-js.win32-x64-msvc.node"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustinlacewell/steamworks-ts.git"
+    "url": "https://github.com/dustinlacewell/steamworks-js.git"
   },
   "license": "MIT",
   "engines": {
