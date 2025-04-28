@@ -19,8 +19,8 @@ if (!target)
 else
     console.log('Building for', key)   
 
-const redist = join(__dirname, 'redist', target.source)
-const dist = join(__dirname, 'npm', target.dest)
+const redist = join(__dirname, '../redist', target.source)
+const dist = join(__dirname, '../npm', target.dest)
 
 console.log('Redist:', redist)
 console.log('Dist:', dist)
