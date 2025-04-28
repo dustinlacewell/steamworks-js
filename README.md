@@ -1,6 +1,6 @@
-<h1 align="center">steamworks-ts</h1>
+<h1 align="center">steamworks-js</h1>
 <p align="center">
-This package provides TypeScript bindings to the <a href="https://partner.steamgames.com/doc/sdk">Steamworks SDK</a>.
+This package provides typed NodeJS bindings to the <a href="https://partner.steamgames.com/doc/sdk">Steamworks SDK</a>.
 <br /><br />
 <a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml">
   <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml/badge.svg" alt="Build" />
