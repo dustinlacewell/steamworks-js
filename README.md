@@ -1,6 +1,7 @@
 <h1 align="center">steamworks-ts</h1>
 <p align="center">
 This package provides typed NodeJS bindings to the <a href="https://partner.steamgames.com/doc/sdk">Steamworks SDK</a>.
+<br />
 <a href="https://www.npmjs.com/package/steamworks-ts">
   <img src="https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM" alt="NPM Version" />
 </a>
@@ -13,9 +14,6 @@ This package provides typed NodeJS bindings to the <a href="https://partner.stea
 </a>
 <a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/docs.yml">
   <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/docs.yml/badge.svg" alt="Docs" />
-</a>
-<a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml">
-  <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml/badge.svg" alt="Release" />
 </a>
 <br/><br/>
 <a href="https://steamworks.ldlework.com">Documentation</a>
