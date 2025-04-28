@@ -9,30 +9,6 @@ const { join } = require('path')
 
 const { platform, arch } = process
 
-const steamDllPath = join(__dirname, 'redist');
-
-if (platform === 'win32') {
-  if (arch === 'x64') {
-    process.env.PATH = `${join(steamDllPath, 'win64', 'steam_api64.dll')};${process.env.PATH}`;
-  } else {
-    throw new Error(`Unsupported architecture on Windows: ${arch}`);
-  }
-} else if (platform === 'darwin') {
-  if (arch === 'x64') {
-    process.env.LD_LIBRARY_PATH = `${join(steamDllPath, 'osx', 'libsteam_api.dylib')};${process.env.LD_LIBRARY_PATH}`;
-  } else {
-    throw new Error(`Unsupported architecture on macOS: ${arch}`);
-  }
-} else if (platform === 'linux') {
-  if (arch === 'x64') {
-    process.env.LD_LIBRARY_PATH = `${join(steamDllPath, 'linux64', 'libsteam_api.so')};${process.env.LD_LIBRARY_PATH}`;
-  } else if (arch === 'ia32') {
-    process.env.LD_LIBRARY_PATH = `${join(steamDllPath, 'linux32', 'libsteam_api.so')};${process.env.LD_LIBRARY_PATH}`;
-  } else {
-    throw new Error(`Unsupported architecture on Linux: ${arch}`);
-  }
-}
-
 let nativeBinding = null
 let localFileExisted = false
 let loadError = null

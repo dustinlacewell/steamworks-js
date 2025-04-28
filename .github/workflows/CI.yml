@@ -101,6 +101,9 @@ jobs:
           name: bindings-${{ matrix.settings.target }}
           path: ${{ env.APP_NAME }}.*.node
           if-no-files-found: error
+      - name: Copy Steam redistributable
+        run: node bin/build.js
+        shell: bash
   test-macOS-windows-binding:
     name: Test bindings on ${{ matrix.settings.target }} - node@${{ matrix.node }}
     needs:

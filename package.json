@@ -15,8 +15,7 @@
     "README.md",
     "index.js",
     "index.d.ts",
-    "package.json",
-    "redist/**"
+    "package.json"
   ],
   "license": "MIT",
   "devDependencies": {
