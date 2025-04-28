@@ -43,7 +43,7 @@ This package is licensed under  [MIT](./LICENSE-MIT).
 If you are seeing errors like `STATUS_DLL_NOT_FOUND`, `Image not found` etc. your platform is not likely supported by Steamworks-ts.
 
 <p align="center">
-<table style="border: none;" cellspacing="0" cellpadding="0">
+<table align="center" style="border: none;" cellspacing="0" cellpadding="0" border=0">
 <tr>
 <td>
 Built with the <i>awesome</i> <a href="https://napi.rs/">napi-rs</a> project.</td>
