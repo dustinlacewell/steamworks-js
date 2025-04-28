@@ -31,18 +31,20 @@ console.log('  Name:', user.name);
 console.log('  Logged On:', user.loggedOn);
 ```
 
-## Building
+## Building locally
 
 You must have a [Rust Toolchain](https://www.rust-lang.org/tools/install) and [NodeJS](https://nodejs.org/):
 
 ```bash
 $ npm i
-$ npm run build
+$ npm run dev
 ```
+
+This should produce `steamworks-ts.<platform>-<arch>.node`.
 
 ## Examples
 
-After [Building](#building), you can run examples with `tsx`:
+After [building locally](#building-locally), you can run examples with `tsx`:
 
 ```
 bash
@@ -52,8 +54,8 @@ $ npx tsx examples/user_info.ts
 ## License
 This package is licensed under [MIT](./LICENSE-MIT).
 
-## Help, I can't run my game!
-If you are seeing errors like `STATUS_DLL_NOT_FOUND`, `Image not found` etc. your platform is not likely supported by steamworks-ts.
+## Help, I can't run my game/tool!
+If you are seeing errors like `STATUS_DLL_NOT_FOUND`, `Image not found` etc. your platform is not likely supported by steamworks-ts or you forgot to [build](#building-locally).
 
 <br><br>
 <p align="center">

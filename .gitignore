@@ -3,6 +3,10 @@ Cargo.lock
 
 *.node
 /target
+steam_api64.dll
+steam_api64.lib
+libsteam_api.dylib
+libsteam_api.so
 
 .specstory
 **/CLAUDE.local.md
