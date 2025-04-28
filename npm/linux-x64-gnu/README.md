@@ -1,3 +1,3 @@
-# `@ldlework/steamworks-ts-linux-x64-gnu`
+# `steamworks-js-linux-x64-gnu`
 
-This is the **x86_64-unknown-linux-gnu** binary for `@ldlework/steamworks-ts`
+This is the **x86_64-unknown-linux-gnu** binary for `steamworks-js`

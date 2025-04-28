@@ -1,5 +1,5 @@
 {
-  "name": "@ldlework/steamworks-ts-linux-x64-gnu",
+  "name": "steamworks-js-linux-x64-gnu",
   "version": "0.0.20",
   "os": [
     "linux"

@@ -1,5 +1,5 @@
 {
-  "name": "@ldlework/steamworks-ts-darwin-x64",
+  "name": "steamworks-js-darwin-x64",
   "version": "0.0.20",
   "os": [
     "darwin"

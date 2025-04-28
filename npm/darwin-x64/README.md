@@ -1,3 +1,3 @@
-# `@ldlework/steamworks-ts-darwin-x64`
+# `steamworks-js-darwin-x64`
 
-This is the **x86_64-apple-darwin** binary for `@ldlework/steamworks-ts`
+This is the **x86_64-apple-darwin** binary for `steamworks-js`

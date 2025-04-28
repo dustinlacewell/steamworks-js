@@ -1,5 +1,5 @@
 {
-  "name": "@ldlework/steamworks-ts-win32-x64-msvc",
+  "name": "steamworks-js-win32-x64-msvc",
   "version": "0.0.20",
   "os": [
     "win32"

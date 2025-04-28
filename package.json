@@ -1,5 +1,5 @@
 {
-  "name": "@ldlework/steamworks-ts",
+  "name": "steamworks-js",
   "version": "0.0.20",
   "main": "index.js",
   "types": "index.d.ts",

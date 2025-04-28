@@ -12,7 +12,7 @@ This package provides TypeScript bindings to the <a href="https://partner.steamg
   <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml/badge.svg" alt="Release" />
 </a>
 <br/>
-<a href="https://www.npmjs.com/package/@ldlework/steamworks-ts">
+<a href="https://www.npmjs.com/package/steamworks-js">
   <img src="https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM" alt="NPM Version" />
 </a>
 <a href="LICENSE">
@@ -25,7 +25,7 @@ This package provides TypeScript bindings to the <a href="https://partner.steamg
 ## Usage
 
 ```ts
-import * as steamworks from '@ldlework/steamworks-ts';
+import * as steamworks from 'steamworks-js';
 
 const steam = new steamworks.SteamClient();
 const user = steam.getCurrentUser();
