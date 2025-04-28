@@ -1,7 +1,7 @@
-import * as steamworks from 'steamworks-ts';
+import { SteamClient } from 'steamworks-ts';
 
 async function main() {
-  const steam = new steamworks.SteamClient();
+  const steam = new SteamClient();
   const user = steam.getCurrentUser();
   console.log('Current User Info:');
   console.log('  Steam ID:', user.steamId);

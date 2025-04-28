@@ -1,6 +1,12 @@
 <h1 align="center">steamworks-ts</h1>
 <p align="center">
 This package provides typed NodeJS bindings to the <a href="https://partner.steamgames.com/doc/sdk">Steamworks SDK</a>.
+<a href="https://www.npmjs.com/package/steamworks-ts">
+  <img src="https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM" alt="NPM Version" />
+</a>
+<a href="LICENSE">
+  <img src="https://img.shields.io/github/license/dustinlacewell/steamworks-ts?label=License" alt="License" />
+</a>
 <br /><br />
 <a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml">
   <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml/badge.svg" alt="Build" />
@@ -10,13 +16,6 @@ This package provides typed NodeJS bindings to the <a href="https://partner.stea
 </a>
 <a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml">
   <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml/badge.svg" alt="Release" />
-</a>
-<br/>
-<a href="https://www.npmjs.com/package/steamworks-ts">
-  <img src="https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM" alt="NPM Version" />
-</a>
-<a href="LICENSE">
-  <img src="https://img.shields.io/github/license/dustinlacewell/steamworks-ts?label=License" alt="License" />
 </a>
 <br/><br/>
 <a href="https://steamworks.ldlework.com">Documentation</a>
