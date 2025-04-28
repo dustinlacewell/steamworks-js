@@ -1,4 +1,4 @@
-name: Build
+name: Build & Release
 env:
   DEBUG: napi:*
   APP_NAME: steamworks-ts
@@ -6,7 +6,8 @@ env:
 permissions:
   contents: write
   id-token: write
-'on':
+
+on:
   push:
     branches:
       - main
@@ -18,10 +19,10 @@ permissions:
       - '**/*.gitignore'
       - .editorconfig
       - docs/**
-  pull_request: null
+  pull_request:
 
 jobs:
-  build:
+  build-and-release:
     strategy:
       fail-fast: false
       matrix:
@@ -30,30 +31,33 @@ jobs:
             target: x86_64-apple-darwin
             build: npm run build -- --target x86_64-apple-darwin
           - host: windows-latest
-            build: npm run build -- --target x86_64-pc-windows-msvc
             target: x86_64-pc-windows-msvc
+            build: npm run build -- --target x86_64-pc-windows-msvc
           - host: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             docker: ghcr.io/napi-rs/napi-rs/nodejs-rust:lts-debian
             build: npm run build -- --target x86_64-unknown-linux-gnu
-    name: stable - ${{ matrix.settings.target }} - node@20
+    name: Build & Release - ${{ matrix.settings.target }} - node@20
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Setup node
+
+      - name: Setup Node
         uses: actions/setup-node@v4
         if: ${{ !matrix.settings.docker }}
         with:
           node-version: 20
           cache: npm
-      - name: Install
+
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         if: ${{ !matrix.settings.docker }}
         with:
           toolchain: stable
           targets: ${{ matrix.settings.target }}
+
       - name: Cache cargo
         uses: actions/cache@v4
         with:
@@ -64,27 +68,10 @@ jobs:
             .cargo-cache
             target/
           key: ${{ matrix.settings.target }}-cargo-${{ matrix.settings.host }}
-      - uses: goto-bus-stop/setup-zig@v2
-        if: ${{ matrix.settings.target == 'armv7-unknown-linux-gnueabihf' || matrix.settings.target == 'armv7-unknown-linux-musleabihf' }}
-        with:
-          version: 0.13.0
-      - name: Setup toolchain
-        run: ${{ matrix.settings.setup }}
-        if: ${{ matrix.settings.setup }}
-        shell: bash
-      - name: Setup node x86
-        if: matrix.settings.target == 'i686-pc-windows-msvc'
-        run: npm config set supported-architectures.cpu "ia32"
-        shell: bash
+
       - name: Install dependencies
         run: npm install
-      - name: Setup node x86
-        uses: actions/setup-node@v4
-        if: matrix.settings.target == 'i686-pc-windows-msvc'
-        with:
-          node-version: 20
-          cache: npm
-          architecture: x86
+
       - name: Build in docker
         uses: addnab/docker-run-action@v3
         if: ${{ matrix.settings.docker }}
@@ -92,10 +79,12 @@ jobs:
           image: ${{ matrix.settings.docker }}
           options: '--user 0:0 -v ${{ github.workspace }}/.cargo-cache/git/db:/usr/local/cargo/git/db -v ${{ github.workspace }}/.cargo/registry/cache:/usr/local/cargo/registry/cache -v ${{ github.workspace }}/.cargo/registry/index:/usr/local/cargo/registry/index -v ${{ github.workspace }}:/build -w /build'
           run: ${{ matrix.settings.build }}
+
       - name: Build
         run: ${{ matrix.settings.build }}
         if: ${{ !matrix.settings.docker }}
         shell: bash
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -103,70 +92,36 @@ jobs:
           path: ${{ env.APP_NAME }}.*.node
           if-no-files-found: error
 
-  test-macOS-windows-binding:
-    name: Test bindings on ${{ matrix.settings.target }} - node@${{ matrix.node }}
-    needs:
-      - build
-    strategy:
-      fail-fast: false
-      matrix:
-        settings:
-          - host: macos-latest
-            target: x86_64-apple-darwin
-          - host: windows-latest
-            target: x86_64-pc-windows-msvc
-        node:
-          - '18'
-          - '20'
-    runs-on: ${{ matrix.settings.host }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: npm
-          architecture: x64
-      - name: Install dependencies
-        run: npm install
-      - name: Download artifacts
+      # Only run the following steps once, after all matrix builds are done
+      - name: Download all artifacts
+        if: ${{ matrix.settings.target == 'x86_64-unknown-linux-gnu' }}
         uses: actions/download-artifact@v4
         with:
-          name: bindings-${{ matrix.settings.target }}
-          path: .
-      - name: List packages
-        run: ls -R .
-        shell: bash
+          path: artifacts
 
-  test-linux-x64-gnu-binding:
-    name: Test bindings on Linux-x64-gnu - node@${{ matrix.node }}
-    needs:
-      - build
-    strategy:
-      fail-fast: false
-      matrix:
-        node:
-          - '18'
-          - '20'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: npm
-      - name: Install dependencies
-        run: npm install
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: bindings-x86_64-unknown-linux-gnu
-          path: .
-      - name: List packages
-        run: ls -R .
-        shell: bash 
+      - name: Move artifacts
+        if: ${{ matrix.settings.target == 'x86_64-unknown-linux-gnu' }}
+        run: npm run artifacts
+
+      - name: Pack npm package
+        if: ${{ matrix.settings.target == 'x86_64-unknown-linux-gnu' }}
+        run: npm pack
+
+      - name: Publish to npm
+        if: |
+          github.ref == 'refs/heads/main' &&
+          matrix.settings.target == 'x86_64-unknown-linux-gnu' &&
+          (startsWith(github.event.head_commit.message, 'release:') || github.event.head_commit.message =~ '^[0-9]+\\.[0-9]+\\.[0-9]+')
+        run: |
+          npm config set provenance true
+          if echo "${{ github.event.head_commit.message }}" | grep -E "^[0-9]+\.[0-9]+\.[0-9]+$"; then
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            npm publish --access public
+          elif echo "${{ github.event.head_commit.message }}" | grep -E "^[0-9]+\.[0-9]+\.[0-9]+"; then
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            npm publish --tag next --access public
+          else
+            echo "Not a release, skipping publish"
+          fi
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
