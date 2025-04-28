@@ -1,4 +1,4 @@
-import * as steamworks from '../../index.js';
+import * as steamworks from '../index.js';
 
 async function main() {
   const steam = new steamworks.SteamClient();

@@ -31,6 +31,24 @@ console.log('  Name:', user.name);
 console.log('  Logged On:', user.loggedOn);
 ```
 
+## Building
+
+You must have a [Rust Toolchain](https://www.rust-lang.org/tools/install) and [NodeJS](https://nodejs.org/):
+
+```bash
+$ npm i
+$ npm run build
+```
+
+## Examples
+
+After [Building](#building), you can run examples with `tsx`:
+
+```
+bash
+$ npx tsx examples/user_info.ts
+```
+
 ## License
 This package is licensed under [MIT](./LICENSE-MIT).
 
