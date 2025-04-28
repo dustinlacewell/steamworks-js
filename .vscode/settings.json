@@ -1,11 +1,14 @@
 {
     "files.exclude": {
-        "**/node_modules": true,
-        "target": true,
         ".gitmodules": true,
         ".npmignore": true,
         "build.rs": true,
         "Cargo.lock": true,
-        "yarn.lock": true
+        "package-lock.json": true,
+        "swrs": true,
+        "npm": true,
+        ".vscode": true,
+        ".github": true,
+        ".cargo": true
     }
 }
