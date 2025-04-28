@@ -1,5 +1,5 @@
 # steamworks
-[![NPM Version](https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts)](https://www.npmjs.com/package/@ldlework/steamworks-ts)
+[![NPM Version](https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM)](https://www.npmjs.com/package/@ldlework/steamworks-ts)
 [![License](https://img.shields.io/github/license/dustinlacewell/steamworks-ts?label=License)](LICENSE)
 
 This package provides TypeScript bindings to the [Steamworks SDK](https://partner.steamgames.com/doc/sdk).
