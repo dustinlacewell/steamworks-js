@@ -4,6 +4,7 @@ Cargo.lock
 *.node
 /target
 
+.specstory
 **/CLAUDE.local.md
 **/CLAUDE.md
 **/.windsurfrules
