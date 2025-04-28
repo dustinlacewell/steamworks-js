@@ -1,7 +1,7 @@
 name: Build
 env:
   DEBUG: napi:*
-  APP_NAME: steamworks-js
+  APP_NAME: steamworks-ts
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 permissions:
   contents: write

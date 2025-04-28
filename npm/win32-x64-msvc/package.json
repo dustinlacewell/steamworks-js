@@ -1,5 +1,5 @@
 {
-  "name": "steamworks-js-win32-x64-msvc",
+  "name": "steamworks-ts-win32-x64-msvc",
   "version": "0.0.23",
   "os": [
     "win32"
@@ -7,15 +7,15 @@
   "cpu": [
     "x64"
   ],
-  "main": "steamworks-js.win32-x64-msvc.node",
+  "main": "steamworks-ts.win32-x64-msvc.node",
   "files": [
     "steam_api64.dll",
     "steam_api64.lib",
-    "steamworks-js.win32-x64-msvc.node"
+    "steamworks-ts.win32-x64-msvc.node"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustinlacewell/steamworks-js.git"
+    "url": "https://github.com/dustinlacewell/steamworks-ts.git"
   },
   "license": "MIT",
   "engines": {

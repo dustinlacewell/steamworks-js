@@ -17,10 +17,10 @@ async function findBinary(command: string) {
 async function main() {
   process.chdir('bin/tests/app');
 
-  // install latest steamworks-js
+  // install latest steamworks-ts
   const npm = await findBinary('npm');
   try {
-    const child = spawn(npm, ['install', 'steamworks-js@latest'], { stdio: 'inherit', shell: true });
+    const child = spawn(npm, ['install', 'steamworks-ts@latest'], { stdio: 'inherit', shell: true });
     child.on('close', async (code) => {
       if (code !== 0) {
         console.error(`Child process exited with code ${code}`);
@@ -47,7 +47,7 @@ async function main() {
       process.exit(1);
     });
   } catch (err) {
-    console.error(`Failed to install steamworks-js: ${err}`);
+    console.error(`Failed to install steamworks-ts: ${err}`);
     process.exit(1);
   }
 }

@@ -1,15 +1,15 @@
 {
-  "name": "steamworks-js",
+  "name": "steamworks-ts",
   "version": "0.0.23",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
-    "name": "steamworks-js",
+    "name": "steamworks-ts",
     "triples": {}
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustinlacewell/steamworks-js.git"
+    "url": "https://github.com/dustinlacewell/steamworks-ts.git"
   },
   "files": [
     "README.md",

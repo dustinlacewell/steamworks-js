@@ -1,7 +1,7 @@
 name: Release
 env:
   DEBUG: napi:*
-  APP_NAME: steamworks-js
+  APP_NAME: steamworks-ts
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 permissions:
   contents: write
@@ -29,11 +29,16 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm install
+      - name: Debug workflow run
+        run: |
+          echo "Workflow Run ID: ${{ github.event.workflow_run.id }}"
+          echo "Workflow Run Status: ${{ github.event.workflow_run.status }}"
+          echo "Workflow Run Conclusion: ${{ github.event.workflow_run.conclusion }}"
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
           path: artifacts
-          run_id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ github.event.workflow_run.id }}
       - name: Debug - List all artifact files
         run: |
           echo "::group::artifacts directory tree"

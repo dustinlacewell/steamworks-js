@@ -1,5 +1,5 @@
 {
-  "name": "steamworks-js-darwin-x64",
+  "name": "steamworks-ts-darwin-x64",
   "version": "0.0.23",
   "os": [
     "darwin"
@@ -7,14 +7,14 @@
   "cpu": [
     "x64"
   ],
-  "main": "steamworks-js.darwin-x64.node",
+  "main": "steamworks-ts.darwin-x64.node",
   "files": [
     "libsteam_api.dylib",
-    "steamworks-js.darwin-x64.node"
+    "steamworks-ts.darwin-x64.node"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustinlacewell/steamworks-js.git"
+    "url": "https://github.com/dustinlacewell/steamworks-ts.git"
   },
   "license": "MIT",
   "engines": {

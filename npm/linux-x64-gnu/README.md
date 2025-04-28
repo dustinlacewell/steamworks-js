@@ -1,3 +1,3 @@
-# `steamworks-js-linux-x64-gnu`
+# `steamworks-ts-linux-x64-gnu`
 
-This is the **x86_64-unknown-linux-gnu** binary for `steamworks-js`
+This is the **x86_64-unknown-linux-gnu** binary for `steamworks-ts`
