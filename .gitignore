@@ -1,6 +1,7 @@
 **/node_modules
 Cargo.lock
 
+index.d.ts
 *.node
 /target
 steam_api64.dll
