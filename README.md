@@ -6,12 +6,6 @@ This package provides TypeScript bindings to the [Steamworks SDK](https://partne
 
 [Documentation](https://steamworks.ldlework.com)
 
-## Usage
-Install the package `@ldlework/steamworks-ts`:
-
-## Example
-You can find more examples in [examples](examples).
-
 ```ts
 import * as steamworks from '@ldlework/steamworks-ts';
 
