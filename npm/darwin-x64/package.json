@@ -1,6 +1,6 @@
 {
   "name": "@ldlework/steamworks-ts-darwin-x64",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "os": [
     "darwin"
   ],
