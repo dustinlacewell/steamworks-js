@@ -2,9 +2,9 @@
 ![NPM Version](https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts)
 ![GitHub License](https://img.shields.io/github/license/dustinlacewell/steamworks-ts)
 
-[[Documentation](https://steamworks.ldlework.com)] (https://steamworks.ldlework.com)
-
 This package provides TypeScript bindings to the [Steamworks SDK](https://partner.steamgames.com/doc/sdk).
+
+[Documentation](https://steamworks.ldlework.com)
 
 ## Usage
 Install the package `@ldlework/steamworks-ts`:
