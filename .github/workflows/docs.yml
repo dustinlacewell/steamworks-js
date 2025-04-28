@@ -4,14 +4,18 @@ permissions:
   pages: write
   id-token: write
 'on':
-  release:
-    types: [published]
+  workflow_run:
+    workflows: ["Build"]
+    branches: [main]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
   docs:
     name: Generate Documentation
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
