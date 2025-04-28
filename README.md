@@ -19,7 +19,7 @@ console.log('  Logged On:', user.loggedOn);
 ```
 
 ## License
-This crate is licensed under  [MIT](./LICENSE-MIT).
+This package is licensed under  [MIT](./LICENSE-MIT).
 
 ## Help, I can't run my game!
 If you are seeing errors like `STATUS_DLL_NOT_FOUND`, `Image not found` etc. your platform is not likely supported by Steamworks-ts.
