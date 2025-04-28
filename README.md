@@ -1,5 +1,7 @@
 <h1 align="center">steamworks-ts</h1>
 <p align="center">
+This package provides TypeScript bindings to the <a href="https://partner.steamgames.com/doc/sdk">Steamworks SDK</a>.
+<br /><br />
 <a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml">
   <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml/badge.svg" alt="Build" />
 </a>
@@ -16,14 +18,11 @@
 <a href="LICENSE">
   <img src="https://img.shields.io/github/license/dustinlacewell/steamworks-ts?label=License" alt="License" />
 </a>
-<br/>
+<br/><br/>
 <a href="https://steamworks.ldlework.com">Documentation</a>
 </p>
 
-
-
-
-This package provides TypeScript bindings to the [Steamworks SDK](https://partner.steamgames.com/doc/sdk).
+## Usage
 
 ```ts
 import * as steamworks from '@ldlework/steamworks-ts';
