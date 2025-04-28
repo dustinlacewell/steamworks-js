@@ -37,8 +37,12 @@ This package is licensed under [MIT](./LICENSE-MIT).
 ## Help, I can't run my game!
 If you are seeing errors like `STATUS_DLL_NOT_FOUND`, `Image not found` etc. your platform is not likely supported by steamworks-ts.
 
+<br><br>
 <p align="center">
 <table align="center" style="border: none;" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td colspan="2">Built ontop of <a href="https://github.com/Noxime/steamworks-rs">steamworks-rs</a></td>
+  </tr>
   <tr>
     <td>Built with the <i>awesome</i> <a href="https://napi.rs/">napi-rs</a> project.</td>
     <td><sub><img src="https://napi.rs/img/favicon.png" width="24" /></sub></td>
