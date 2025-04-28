@@ -1,9 +1,26 @@
-# steamworks
-[![NPM Version](https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM)](https://www.npmjs.com/package/@ldlework/steamworks-ts)
-[![License](https://img.shields.io/github/license/dustinlacewell/steamworks-ts?label=License)](LICENSE)
-[![CI](https://github.com/dustinlacewell/steamworks-ts/actions/workflows/CI.yml/badge.svg)](https://github.com/dustinlacewell/steamworks-ts/actions/workflows/CI.yml)
+<h1 align="center">steamworks-ts</h1>
+<p align="center">
+<a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml">
+  <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/build.yml/badge.svg" alt="Build" />
+</a>
+<a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/docs.yml">
+  <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/docs.yml/badge.svg" alt="Docs" />
+</a>
+<a href="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml">
+  <img src="https://github.com/dustinlacewell/steamworks-ts/actions/workflows/release.yml/badge.svg" alt="Release" />
+</a>
+<br/>
+<a href="https://www.npmjs.com/package/@ldlework/steamworks-ts">
+  <img src="https://img.shields.io/npm/v/%40ldlework%2Fsteamworks-ts?label=NPM" alt="NPM Version" />
+</a>
+<a href="LICENSE">
+  <img src="https://img.shields.io/github/license/dustinlacewell/steamworks-ts?label=License" alt="License" />
+</a>
+<br/>
+<a href="https://steamworks.ldlework.com">Documentation</a>
+</p>
 
-[Documentation](https://steamworks.ldlework.com)
+
 
 
 This package provides TypeScript bindings to the [Steamworks SDK](https://partner.steamgames.com/doc/sdk).
