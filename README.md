@@ -20,15 +20,10 @@ This package provides typed NodeJS bindings to the <a href="https://partner.stea
 ## Usage
 
 ```ts
-import * as steamworks from 'steamworks-ts';
+import { SteamClient } from 'steamworks-ts';
 
-const steam = new steamworks.SteamClient();
-const user = steam.getCurrentUser();
-console.log('Current User Info:');
-console.log('  Steam ID:', user.steamId);
-console.log('  Account ID:', user.accountId);
-console.log('  Name:', user.name);
-console.log('  Logged On:', user.loggedOn);
+const steam = new SteamClient();
+const { steamId, accountId, name, loggedOn } = steam.getCurrentUser();
 ```
 
 ## Building locally
@@ -41,6 +36,18 @@ $ npm run dev
 ```
 
 This should produce `steamworks-ts.<platform>-<arch>.node`.
+
+## The `steam_appid.txt` File
+
+Steamworks requires a file named `steam_appid.txt` containing the AppID of the Steam app Steamworks is meant to interact with. If this file doesn't exist, you'll get a warning and one will be created automatically:
+
+```bash
+$ npx tsx examples/user_info.ts 
+Warning, creating default steam_appid.txt with 480 (Spacewar)
+...
+```
+
+> Spacewar is an example application used to help developers understand the usage of the Steamworks API.
 
 ## Examples
 
