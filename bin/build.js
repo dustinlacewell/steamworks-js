@@ -1,5 +1,8 @@
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 import { copyFileSync, existsSync } from 'fs'
-import { join } from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // Platform/arch detection (as in original build.js)
 const targets ={
