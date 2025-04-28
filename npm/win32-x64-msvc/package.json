@@ -9,6 +9,8 @@
   ],
   "main": "steamworks-ts.win32-x64-msvc.node",
   "files": [
+    "steam_api64.dll",
+    "steam_api64.lib",
     "steamworks-ts.win32-x64-msvc.node"
   ],
   "repository": {

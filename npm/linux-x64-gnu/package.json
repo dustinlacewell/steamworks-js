@@ -9,6 +9,7 @@
   ],
   "main": "steamworks-ts.linux-x64-gnu.node",
   "files": [
+    "libsteam_api.so",
     "steamworks-ts.linux-x64-gnu.node"
   ],
   "repository": {

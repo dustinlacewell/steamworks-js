@@ -9,6 +9,7 @@
   ],
   "main": "steamworks-ts.darwin-x64.node",
   "files": [
+    "libsteam_api.dylib",
     "steamworks-ts.darwin-x64.node"
   ],
   "repository": {
