@@ -7,6 +7,8 @@ Cargo.lock
 **/CLAUDE.local.md
 **/CLAUDE.md
 **/.windsurfrules
+.cursorrules
+.cursorindexingignore
 
 steam_appid.txt
 docs
