@@ -33,6 +33,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts
+          run_id: ${{ github.event.workflow_run.id }}
       - name: Debug - List all artifact files
         run: |
           echo "::group::artifacts directory tree"
