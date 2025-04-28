@@ -14,6 +14,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@ldlework/steamworks-ts": "^0.0.14"
+    "@ldlework/steamworks-ts": "^0.0.15"
   }
 }

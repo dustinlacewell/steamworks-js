@@ -1,7 +1,8 @@
 **/node_modules
 Cargo.lock
-/target
+
 *.node
+/target
 
 **/CLAUDE.local.md
 **/CLAUDE.md

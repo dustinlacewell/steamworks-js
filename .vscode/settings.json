@@ -1,14 +1,15 @@
 {
     "files.exclude": {
-        ".gitmodules": true,
-        ".npmignore": true,
-        "build.rs": true,
-        "Cargo.lock": true,
-        "package-lock.json": true,
-        "swrs": true,
-        "npm": true,
-        ".vscode": true,
-        ".github": true,
-        ".cargo": true
+        ".cargo": false,
+        "swrs": false,
+        "npm": false,
+        ".gitmodules": false,
+        "build.rs": false,
+        "Cargo.toml": false,
+        "package-lock.json": false,
+        "node_modules": false,
+        "target": false,
+        "Cargo.lock": false,
+        "steam_appid.txt": false
     }
 }
