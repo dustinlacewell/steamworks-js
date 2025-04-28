@@ -197,8 +197,9 @@ Cargo.lock
 *.node
 
 **/CLAUDE.local.md
+**/CLAUDE.md
+**/.windsurfrules
 
-test
-tests
+
 steam_appid.txt
 docs

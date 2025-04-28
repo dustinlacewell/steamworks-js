@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/node_modules": true,
+        "target": true,
+        ".gitmodules": true,
+        ".npmignore": true,
+        "build.rs": true,
+        "Cargo.lock": true,
+        "yarn.lock": true
+    }
+}
