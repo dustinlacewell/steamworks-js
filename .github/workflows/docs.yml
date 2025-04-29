@@ -5,7 +5,7 @@ permissions:
   id-token: write
 on:
   workflow_run:
-    workflows: ["CI"]
+    workflows: ["build"]
     branches: [main]
     types:
       - completed
