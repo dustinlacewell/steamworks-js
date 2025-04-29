@@ -310,18 +310,17 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { itemStateToString, WorkshopItemVisibility, WorkshopFileType, WorkshopQueryType, WorkshopUGCType, UserWorkshopListType, UserWorkshopListOrder, WorkshopItemStateEnum, UgcClient, FriendRelationshipEnum, PersonaStateEnum, sum, SteamClient } = nativeBinding
+const { itemStateToString, WorkshopItemVisibility, WorkshopFileType, WorkshopQueryType, WorkshopUGCType, WorkshopUserListType, WorkshopUserListOrder, WorkshopItemStateEnum, UgcClient, FriendRelationshipEnum, PersonaStateEnum, SteamClient } = nativeBinding
 
 module.exports.itemStateToString = itemStateToString
 module.exports.WorkshopItemVisibility = WorkshopItemVisibility
 module.exports.WorkshopFileType = WorkshopFileType
 module.exports.WorkshopQueryType = WorkshopQueryType
 module.exports.WorkshopUGCType = WorkshopUGCType
-module.exports.UserWorkshopListType = UserWorkshopListType
-module.exports.UserWorkshopListOrder = UserWorkshopListOrder
+module.exports.WorkshopUserListType = WorkshopUserListType
+module.exports.WorkshopUserListOrder = WorkshopUserListOrder
 module.exports.WorkshopItemStateEnum = WorkshopItemStateEnum
 module.exports.UgcClient = UgcClient
 module.exports.FriendRelationshipEnum = FriendRelationshipEnum
 module.exports.PersonaStateEnum = PersonaStateEnum
-module.exports.sum = sum
 module.exports.SteamClient = SteamClient

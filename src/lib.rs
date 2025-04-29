@@ -24,12 +24,6 @@ pub struct UserInfo {
   pub logged_on: bool,
 }
 
-// Simple test function
-#[napi]
-pub fn sum(a: i32, b: i32) -> i32 {
-  a + b
-}
-
 #[napi]
 pub struct SteamClient {
   client: Arc<Client>,
@@ -74,7 +68,6 @@ impl SteamClient {
   pub fn get_current_user(&self) -> Result<UserInfo> {
     // Get the user interface
     let user = self.client.user();
-   
     // Get the steam ID
     let steam_id = user.steam_id();
 
@@ -82,7 +75,6 @@ impl SteamClient {
     
     // Get the user's name from FriendsClient
     let name = self.friends.get_persona_name()?;
-    
     // Get the current persona state as an enum
     let state = self.friends.get_persona_state()?;
     
@@ -101,8 +93,8 @@ impl SteamClient {
 
   // // Get workshop item details asynchronously
   // #[napi]
-  // pub fn get_item(&self, item_id: f64) -> AsyncTask<GetWorkshopItemDetailsTask> {
-  //   AsyncTask::new(GetWorkshopItemDetailsTask {
+  // pub fn get_item(&self, item_id: f64) -> AsyncTask<WorkshopQueryItemTask> {
+  //   AsyncTask::new(WorkshopQueryItemTask {
   //     client: self.client.clone(),
   //     item_id,
   //   })

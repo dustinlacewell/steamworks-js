@@ -7,7 +7,7 @@ use super::query::fetch_details;
 use super::types::*;
 
 // /// Async Task for getting workshop item details
-pub struct QueryUserTask {
+pub struct WorkshopQueryUserTask {
   pub client: Arc<steamworks::Client>,
   pub app_id: AppId,
   pub account: AccountId,
@@ -17,7 +17,7 @@ pub struct QueryUserTask {
   pub page: u32,
 }
 
-impl QueryUserTask {
+impl WorkshopQueryUserTask {
   fn create_query_handle(&self) -> Result<QueryHandle> {
     match self.client.ugc().query_user(
       self.account,
@@ -37,7 +37,7 @@ impl QueryUserTask {
 }
 
 #[napi]
-impl Task for QueryUserTask {
+impl Task for WorkshopQueryUserTask {
   type Output = Option<Vec<WorkshopItemDetails>>;
   type JsValue = Option<Vec<WorkshopItemDetails>>;
 

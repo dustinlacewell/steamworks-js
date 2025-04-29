@@ -3,19 +3,17 @@ use napi::{Env, Result, Error};
 use std::sync::Arc;
 use std::sync::mpsc;
 
-use super::types::*;
-
 /// Async Task for getting workshop item details
-pub struct SubscribeToItemTask {
+pub struct WorkshopUnsubscribeItemTask {
     pub client: Arc<steamworks::Client>,
     pub item_id: f64,
 }
 
-impl SubscribeToItemTask {
-    fn subscribe_item(&self) -> Result<Option<()>> {
+impl WorkshopUnsubscribeItemTask {
+    fn unsubscribe_item(&self) -> Result<Option<()>> {
         let ugc = self.client.ugc();
         let (tx, rx) = mpsc::channel();
-        ugc.subscribe_item(steamworks::PublishedFileId(self.item_id as u64), move |result| {
+        ugc.unsubscribe_item(steamworks::PublishedFileId(self.item_id as u64), move |result| {
             let _ = match result {
               Ok(b) => tx.send(Ok(b)),
               Err(e) => tx.send(Err(e.to_string()))
@@ -30,12 +28,12 @@ impl SubscribeToItemTask {
 }
 
 #[napi]
-impl Task for SubscribeToItemTask {
+impl Task for WorkshopUnsubscribeItemTask {
     type Output = Option<()>;
     type JsValue = Option<()>;
 
     fn compute(&mut self) -> Result<Self::Output> {
-        self.subscribe_item()
+        self.unsubscribe_item()
     }
 
     fn resolve(&mut self, env: Env, output: Self::Output) -> Result<Self::JsValue> {

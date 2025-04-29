@@ -174,7 +174,6 @@ export interface UserInfo {
   level: number
   loggedOn: boolean
 }
-export declare function sum(a: number, b: number): number
 export type UGCClient = UgcClient
 export declare class UgcClient {
   itemStateToString(state: WorkshopItemStateEnum): string

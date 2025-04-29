@@ -1,20 +1,20 @@
-mod get_item;
+mod query_item;
 mod query_user;
-mod subscribe_to_item;
+mod subscribe_item;
 mod types;
 mod query;
-mod unsubscribe_to_item;
+mod unsubscribe_item;
 
 use napi::bindgen_prelude::*;
-use query_user::QueryUserTask;
+use query_user::WorkshopQueryUserTask;
 
 use std::sync::Arc;
 use steamworks::{AccountId, AppIDs, AppId, Client, UserList};
-use subscribe_to_item::SubscribeToItemTask;
+use subscribe_item::WorkshopSubscribeItemTask;
 use types::*;
-use unsubscribe_to_item::UnsubscribeToItemTask;
+use unsubscribe_item::WorkshopUnsubscribeItemTask;
 
-use get_item::GetWorkshopItemDetailsTask;
+use query_item::WorkshopQueryItemTask;
 
 // Workshop client for interacting with Steam Workshop
 #[napi]
@@ -46,12 +46,12 @@ impl UGCClient {
     &self,
     app_id: u32, 
     account: u32, 
-    list_type: UserWorkshopListType, 
+    list_type: WorkshopUserListType, 
     item_type: WorkshopUGCType, 
-    sort_order: UserWorkshopListOrder, 
+    sort_order: WorkshopUserListOrder, 
     page: u32
-  ) -> AsyncTask<QueryUserTask> {
-    AsyncTask::new(QueryUserTask {
+  ) -> AsyncTask<WorkshopQueryUserTask> {
+    AsyncTask::new(WorkshopQueryUserTask {
       client:self.client.clone(),
       app_id: AppId(app_id),
       account: AccountId::from_raw(account),
@@ -63,24 +63,24 @@ impl UGCClient {
   }
 
   #[napi]
-  pub fn get_item(&self, item_id: f64) -> AsyncTask<GetWorkshopItemDetailsTask> {
-    AsyncTask::new(GetWorkshopItemDetailsTask {
+  pub fn get_item(&self, item_id: f64) -> AsyncTask<WorkshopQueryItemTask> {
+    AsyncTask::new(WorkshopQueryItemTask {
       client: self.client.clone(),
       item_id,
     })
   }
 
   #[napi]
-  pub fn subscribe_to_item(&self, item_id: f64) -> AsyncTask<SubscribeToItemTask> {
-    AsyncTask::new(SubscribeToItemTask {
+  pub fn subscribe_to_item(&self, item_id: f64) -> AsyncTask<WorkshopSubscribeItemTask> {
+    AsyncTask::new(WorkshopSubscribeItemTask {
       client: self.client.clone(),
       item_id,
     })
   }
 
   #[napi]
-  pub fn unsubscribe_to_item(&self, item_id: f64) -> AsyncTask<UnsubscribeToItemTask> {
-    AsyncTask::new(UnsubscribeToItemTask {
+  pub fn unsubscribe_to_item(&self, item_id: f64) -> AsyncTask<WorkshopUnsubscribeItemTask> {
+    AsyncTask::new(WorkshopUnsubscribeItemTask {
       client: self.client.clone(),
       item_id,
     })

@@ -7,12 +7,12 @@ use super::query::fetch_details;
 use super::types::WorkshopItemDetails;
 
 /// Async Task for getting workshop item details
-pub struct GetWorkshopItemDetailsTask {
+pub struct WorkshopQueryItemTask {
   pub client: Arc<steamworks::Client>,
   pub item_id: f64,
 }
 
-impl GetWorkshopItemDetailsTask {
+impl WorkshopQueryItemTask {
   fn create_query_handle(&self) -> Result<QueryHandle> {
     match self.client.ugc().query_item(PublishedFileId(self.item_id as u64)) {
       Ok(handle) => Ok(handle),
@@ -22,7 +22,7 @@ impl GetWorkshopItemDetailsTask {
 }
 
 #[napi]
-impl Task for GetWorkshopItemDetailsTask {
+impl Task for WorkshopQueryItemTask {
   type Output = Option<WorkshopItemDetails>;
   type JsValue = Option<WorkshopItemDetails>;
 

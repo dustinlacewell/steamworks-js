@@ -154,7 +154,7 @@ impl WorkshopUGCType {
 
 // User workshop list type
 #[napi]
-pub enum UserWorkshopListType {
+pub enum WorkshopUserListType {
   Published = 0,
   VotedOn = 1,
   VotedUp = 2,
@@ -166,25 +166,25 @@ pub enum UserWorkshopListType {
   Followed = 8,
 }
 
-impl UserWorkshopListType {
+impl WorkshopUserListType {
     pub const fn to_user_list(&self) -> UserList {
         match *self {
-            UserWorkshopListType::Published => UserList::Published,
-            UserWorkshopListType::VotedOn => UserList::VotedOn,
-            UserWorkshopListType::VotedUp => UserList::VotedUp,
-            UserWorkshopListType::VotedDown => UserList::VotedDown,
-            UserWorkshopListType::WillVoteLater => UserList::WillVoteLater,
-            UserWorkshopListType::Favorited => UserList::Favorited,
-            UserWorkshopListType::Subscribed => UserList::Subscribed,
-            UserWorkshopListType::UsedOrPlayed => UserList::UsedOrPlayed,
-            UserWorkshopListType::Followed => UserList::Followed,
+            WorkshopUserListType::Published => UserList::Published,
+            WorkshopUserListType::VotedOn => UserList::VotedOn,
+            WorkshopUserListType::VotedUp => UserList::VotedUp,
+            WorkshopUserListType::VotedDown => UserList::VotedDown,
+            WorkshopUserListType::WillVoteLater => UserList::WillVoteLater,
+            WorkshopUserListType::Favorited => UserList::Favorited,
+            WorkshopUserListType::Subscribed => UserList::Subscribed,
+            WorkshopUserListType::UsedOrPlayed => UserList::UsedOrPlayed,
+            WorkshopUserListType::Followed => UserList::Followed,
         }
     }
 }
 
 // User workshop list sort order
 #[napi]
-pub enum UserWorkshopListOrder {
+pub enum WorkshopUserListOrder {
   CreationOrderDesc = 0,
   CreationOrderAsc = 1,
   TitleAsc = 2,
@@ -194,16 +194,16 @@ pub enum UserWorkshopListOrder {
   ForModeration = 6,
 }
 
-impl UserWorkshopListOrder {
+impl WorkshopUserListOrder {
     pub const fn to_user_list_order(&self) -> UserListOrder {
         match *self {
-            UserWorkshopListOrder::CreationOrderDesc => UserListOrder::CreationOrderDesc,
-            UserWorkshopListOrder::CreationOrderAsc => UserListOrder::CreationOrderAsc,
-            UserWorkshopListOrder::TitleAsc => UserListOrder::TitleAsc,
-            UserWorkshopListOrder::LastUpdatedDesc => UserListOrder::LastUpdatedDesc,
-            UserWorkshopListOrder::SubscriptionDateDesc => UserListOrder::SubscriptionDateDesc,
-            UserWorkshopListOrder::VoteScoreDesc => UserListOrder::VoteScoreDesc,
-            UserWorkshopListOrder::ForModeration => UserListOrder::ForModeration
+            WorkshopUserListOrder::CreationOrderDesc => UserListOrder::CreationOrderDesc,
+            WorkshopUserListOrder::CreationOrderAsc => UserListOrder::CreationOrderAsc,
+            WorkshopUserListOrder::TitleAsc => UserListOrder::TitleAsc,
+            WorkshopUserListOrder::LastUpdatedDesc => UserListOrder::LastUpdatedDesc,
+            WorkshopUserListOrder::SubscriptionDateDesc => UserListOrder::SubscriptionDateDesc,
+            WorkshopUserListOrder::VoteScoreDesc => UserListOrder::VoteScoreDesc,
+            WorkshopUserListOrder::ForModeration => UserListOrder::ForModeration
         }
     }
 }

@@ -1,10 +1,20 @@
-import * as steamworks from '../../index.js';
+import { command, run, positional } from 'cmd-ts'
+import * as steamworks from '../../index.js'
 
-async function main() {
-  const steam = new steamworks.SteamClient();
-  const id = process.argv.length === 3 ? Number(process.argv[2]) : 3422500423
-  await steam.workshop.downloadItem(id, true)
-  console.log('Downloaded item:', id)
-}
+const downloadCmd = command({
+  name: 'download',
+  args: {
+    id: positional({ 
+      displayName: 'workshop_id', 
+      description: 'Workshop item ID to download' 
+    }),
+  },
+  async handler({ id }) {
+    const steam = new steamworks.SteamClient()
+    const itemId = Number(id)
+    await steam.workshop.downloadItem(itemId, true)
+    console.log('Download started for:', itemId)
+  }
+})
 
-main().catch(console.error);
+run(downloadCmd, process.argv.slice(2))

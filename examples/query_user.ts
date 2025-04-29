@@ -6,9 +6,9 @@ async function main() {
   const query = await steam.workshop.queryUser(
     2212330, // yomi hustle
     user.accountId,
-    steamworks.UserWorkshopListType.Published,
+    steamworks.WorkshopUserListType.Published,
     steamworks.WorkshopUGCType.All,
-    steamworks.UserWorkshopListOrder.TitleAsc,
+    steamworks.WorkshopUserListOrder.TitleAsc,
     1
   );
   console.log(query);
