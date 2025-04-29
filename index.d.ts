@@ -85,7 +85,7 @@ export const enum WorkshopUGCType {
   GameManagedItems = 12,
   All = 13
 }
-export const enum UserWorkshopListType {
+export const enum WorkshopUserListType {
   Published = 0,
   VotedOn = 1,
   VotedUp = 2,
@@ -96,7 +96,7 @@ export const enum UserWorkshopListType {
   UsedOrPlayed = 7,
   Followed = 8
 }
-export const enum UserWorkshopListOrder {
+export const enum WorkshopUserListOrder {
   CreationOrderDesc = 0,
   CreationOrderAsc = 1,
   TitleAsc = 2,
@@ -177,7 +177,7 @@ export interface UserInfo {
 export type UGCClient = UgcClient
 export declare class UgcClient {
   itemStateToString(state: WorkshopItemStateEnum): string
-  queryUser(appId: number, account: number, listType: UserWorkshopListType, itemType: WorkshopUGCType, sortOrder: UserWorkshopListOrder, page: number): Promise<Array<WorkshopItemDetails> | null>
+  queryUser(appId: number, account: number, listType: WorkshopUserListType, itemType: WorkshopUGCType, sortOrder: WorkshopUserListOrder, page: number): Promise<Array<WorkshopItemDetails> | null>
   getItem(itemId: number): Promise<WorkshopItemDetails | null>
   subscribeToItem(itemId: number): Promise<void>
   unsubscribeToItem(itemId: number): Promise<void>
