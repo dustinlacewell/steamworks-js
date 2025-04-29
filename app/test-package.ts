@@ -15,7 +15,7 @@ async function findBinary(command: string) {
 }
 
 async function main() {
-  process.chdir('bin/tests/app');
+  process.chdir('app');
 
   // install latest steamworks-ts
   const npm = await findBinary('npm');

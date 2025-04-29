@@ -44,7 +44,7 @@
     "build:clean": "npm run clean && napi build --platform --release",
     "build:debug": "napi build --platform",
     "prepublishOnly": "napi prepublish -t npm",
-    "test:package": "npx tsx bin/tests/package.ts",
+    "test:package": "npx tsx app/test-package.ts",
     "universal": "napi universal",
     "version": "napi version"
   },
